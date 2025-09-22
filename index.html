@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hubble’s Law & the Expanding Universe</title>
+  <meta name="description" content="One‑page educational website explaining Hubble’s Law, evidence for expansion, key figures, and modern cosmology with student-friendly text and sources."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070814; --panel:#0f1224; --ink:#E9EDF5; --muted:#b8c0d9; --accent:#7dd3fc; --accent2:#c084fc;
+      --ring: 0 0 0 2px rgba(125,211,252,0.3);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:radial-gradient(80vw 80vh at 20% -10%, #1a1d3a, transparent), radial-gradient(60vw 60vh at 120% 10%, #0b0e24, transparent), var(--bg);}
+    a{color:var(--accent)}
+    .container{max-width:1100px;margin-inline:auto;padding:0 20px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(7,8,20,0.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav a{color:var(--ink);text-decoration:none;font-weight:600;opacity:.9}
+    .nav .menu{display:flex;gap:18px}
+    .nav .menu a{font-size:14px;padding:8px 10px;border-radius:10px}
+    .nav .menu a:hover{background:rgba(255,255,255,0.06)}
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:64px 0}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(125,211,252,0.12);color:#d7f0ff;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(125,211,252,0.25)}
+    h1{font-size:clamp(28px,4vw,48px);line-height:1.05;margin:10px 0 8px}
+    .lead{color:var(--muted);font-size:18px}
+    .cta{display:flex;gap:12px;margin-top:22px}
+    .btn{appearance:none;border:none;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;transition:.2s;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b0f1f}
+    .btn.secondary{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,0.18)}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px}
+    .mock{aspect-ratio:16/10;background:linear-gradient(180deg,#0d1024,#070b1c);border-radius:12px;position:relative;overflow:hidden}
+    /* Stars */
+    .stars, .stars2, .stars3{position:absolute;inset:0; background-repeat:repeat; animation:move 120s linear infinite;opacity:.5}
+    .stars{background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent 40%),radial-gradient(1px 1px at 80px 120px,#fff,transparent 40%),radial-gradient(1px 1px at 200px 50px,#fff,transparent 40%)}
+    .stars2{background-image:radial-gradient(2px 2px at 50px 90px,#fff,transparent 40%),radial-gradient(1px 1px at 150px 10px,#fff,transparent 40%),radial-gradient(1px 1px at 250px 130px,#fff,transparent 40%);animation-duration:180s}
+    .stars3{background-image:radial-gradient(1px 1px at 30px 60px,#fff,transparent 40%),radial-gradient(2px 2px at 170px 100px,#fff,transparent 40%);animation-duration:260s}
+    @keyframes move{to{transform:translateY(-300px)}}
+    /* Sections */
+    section{padding:56px 0;border-top:1px solid rgba(255,255,255,0.06)}
+    h2{font-size:clamp(22px,3vw,32px);margin:0 0 12px}
+    p{line-height:1.7;color:#d8deef}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .left{grid-column:span 7}
+    .right{grid-column:span 5}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px}
+    .kicker{font-size:12px;color:#c6d0ee;letter-spacing:.12em;text-transform:uppercase}
+    .ul{margin:10px 0 0;padding-left:18px}
+    .ul li{margin:6px 0;color:#cfd6ef}
+    figure{margin:0}
+    figure img{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.08)}
+    figcaption{color:#aeb8da;font-size:12px;margin-top:6px}
+    /* Two-up cards */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    /* Footer */
+    footer{padding:40px 0;color:#c8d0ea}
+    .sources a{display:block;color:#a8d8ff;text-decoration:none;margin:4px 0}
+    .small{font-size:12px;color:#9db0d6}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns:1fr}
+      .left,.right{grid-column:1/-1}
+      .two{grid-template-columns:1fr}
+      .nav .menu{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" aria-label="Home"><strong>Cosmic Explorer</strong></a>
+      <nav class="menu" aria-label="Main navigation">
+        <a href="#hubble">Hubble’s Law</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#people">Key Figures</a>
+        <a href="#modern">Modern Cosmology</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="container wrap">
+        <div>
+          <span class="chip">Expanding Universe • Student Guide</span>
+          <h1>Hubble’s Law & the Expanding Universe</h1>
+          <p class="lead">Galaxies are moving away from each other — and the farther away they are, the faster they recede. This simple relationship, discovered by Edwin Hubble and anticipated by Georges Lemaître, reshaped cosmology.</p>
+          <div class="cta">
+            <a class="btn" href="#hubble">Start Learning</a>
+            <a class="btn secondary" href="#sources">Jump to Sources</a>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="mock" aria-hidden="true">
+            <div class="stars"></div>
+            <div class="stars2"></div>
+            <div class="stars3"></div>
+          </div>
+          <p class="small" style="margin:10px 6px 0">Animated starfield mockup — replace images below with NASA/ESA assets as needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HUBBLE’S LAW -->
+    <section id="hubble" aria-labelledby="hubble-title">
+      <div class="container grid">
+        <div class="left">
+          <div class="kicker">Definition</div>
+          <h2 id="hubble-title">What is Hubble’s Law?</h2>
+          <p><strong>Hubble’s Law</strong> states that a galaxy’s recession velocity (<em>v</em>) is proportional to its distance (<em>d</em>) from us: <strong>v = H<sub>0</sub> · d</strong>, where <strong>H<sub>0</sub></strong> is the Hubble constant. In plain language: distant galaxies appear to move away faster than nearby ones. This is best explained by <strong>space itself expanding</strong>, not galaxies flying through a fixed space.</p>
+          <ul class="ul">
+            <li><strong>Discovered:</strong> 1929 analysis by Edwin Hubble (building on earlier redshift work by Vesto Slipher and theory by Georges Lemaître).</li>
+            <li><strong>Key idea:</strong> Redshift of light from distant galaxies increases with distance.</li>
+            <li><strong>Implication:</strong> The Universe had a beginning and has been expanding since — consistent with the <strong>Big Bang Theory</strong>.</li>
+          </ul>
+        </div>
+        <div class="right">
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Hubble%27s_law_-_v%3DH0d.png" alt="Simple chart illustrating Hubble’s Law: velocity increases with distance."/>
+            <figcaption>Illustration of v = H₀·d (public domain diagram).</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section id="evidence" aria-labelledby="evidence-title">
+      <div class="container">
+        <div class="kicker">Evidence for an Expanding Universe</div>
+        <h2 id="evidence-title">Three Pillars of Evidence</h2>
+        <div class="two" style="margin-top:12px">
+          <div class="card">
+            <h3>1) Big Bang Theory</h3>
+            <p>The Universe began hot and dense and has been expanding and cooling ever since. Galaxies and large‑scale structure formed as matter clumped under gravity.</p>
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/WMAP_Timeline_of_the_Universe.jpg" alt="Timeline of the Universe from the Big Bang to today (WMAP graphic)."/>
+              <figcaption>WMAP timeline illustration (credit: NASA/WMAP).</figcaption>
+            </figure>
+          </div>
+          <div class="card">
+            <h3>2) Redshift of Galaxies</h3>
+            <p>Light from distant galaxies is stretched to longer (redder) wavelengths as space expands. More distant galaxies show larger redshift — exactly what Hubble’s Law predicts.</p>
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Redshift.svg/640px-Redshift.svg.png" alt="Diagram showing spectral lines shifting toward red with increasing recession velocity."/>
+              <figcaption>Spectral lines shift toward red as distance/velocity increase.</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="two" style="margin-top:16px">
+          <div class="card">
+            <h3>3) Cosmic Microwave Background (CMBR)</h3>
+            <p>A faint, nearly uniform glow at microwave wavelengths — the afterglow of the hot early Universe — mapped precisely by missions like WMAP and Planck.</p>
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Planck_CMB.png" alt="All-sky map of the Cosmic Microwave Background anisotropies."/>
+              <figcaption>CMB all‑sky map (credit: ESA/Planck).</figcaption>
+            </figure>
+          </div>
+          <div class="card">
+            <h3>What the Evidence Means</h3>
+            <ul class="ul">
+              <li>Space expands uniformly on large scales.</li>
+              <li>Looking farther away is looking back in time.</li>
+              <li>Models including dark matter and <strong>dark energy</strong> best fit observations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section id="people" aria-labelledby="people-title">
+      <div class="container grid">
+        <div class="left">
+          <div class="kicker">People</div>
+          <h2 id="people-title">Key Figures</h2>
+          <p><strong>Edwin Hubble</strong> (1889–1953) correlated galaxy distances with their redshifts, quantifying the expansion. <strong>Georges Lemaître</strong> (1894–1966) independently derived the expansion from General Relativity and proposed the “primeval atom” (an early form of the Big Bang idea).</p>
+          <ul class="ul">
+            <li><strong>Milky Way ≠ the whole Universe:</strong> Hubble also showed “spiral nebulae” are external galaxies.</li>
+            <li><strong>Why it matters:</strong> Shifted cosmology from a static to a dynamic Universe.</li>
+          </ul>
+        </div>
+        <div class="right">
+          <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Edwin_Hubble_%281922%29.jpg" alt="Portrait of Edwin Hubble"/>
+            <figcaption>Edwin Hubble (1922)</figcaption>
+          </figure>
+          <figure style="margin-top:12px">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Georges_Lemaitre_1933.jpg" alt="Portrait of Georges Lemaître"/>
+            <figcaption>Georges Lemaître (1933)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODERN COSMOLOGY -->
+    <section id="modern" aria-labelledby="modern-title">
+      <div class="container">
+        <div class="kicker">Today’s Picture</div>
+        <h2 id="modern-title">Modern Cosmology</h2>
+        <div class="two" style="margin-top:12px">
+          <div class="card">
+            <h3>WMAP & Planck</h3>
+            <p>Missions like WMAP and Planck mapped the CMB in detail, pinning down the age, composition, and geometry of the Universe and refining the Hubble constant.</p>
+          </div>
+          <div class="card">
+            <h3>Dark Energy</h3>
+            <p>Observations of distant supernovae and the CMB indicate the expansion is accelerating, driven by an unknown component dubbed <strong>dark energy</strong>.</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>Why It Matters</h3>
+          <ul class="ul">
+            <li>Explains the Universe’s past and hints at its future (continued acceleration vs. other scenarios).</li>
+            <li>Connects <strong>cosmology</strong> and <strong>astrophysics</strong> across observations and theory.</li>
+            <li>Guides ongoing surveys and telescopes studying structure, dark matter, and gravity.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section id="sources" aria-labelledby="sources-title">
+      <div class="container">
+        <div class="kicker">Citations</div>
+        <h2 id="sources-title">Sources & Media (student‑friendly)</h2>
+        <div class="sources">
+          <a href="https://images.nasa.gov/" target="_blank" rel="noopener">NASA Image & Video Library (public domain)</a>
+          <a href="https://esahubble.org/" target="_blank" rel="noopener">ESA/Hubble Site (credit required)</a>
+          <a href="https://map.gsfc.nasa.gov/" target="_blank" rel="noopener">WMAP Mission (NASA/GSFC)</a>
+          <a href="https://www.esa.int/Science_Exploration/Space_Science/Planck" target="_blank" rel="noopener">ESA Planck Mission</a>
+          <a href="https://en.wikipedia.org/wiki/Hubble%27s_law" target="_blank" rel="noopener">Hubble’s Law (overview)</a>
+        </div>
+        <p class="small" style="margin-top:10px">Replace/augment images above with NASA/ESA assets; add any textbook or lecture notes required by your course.</p>
+        <p class="small">AI Use Statement: This page’s layout and draft text were assisted by ChatGPT. All final edits and curation by the student.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="small">© <span id="yr"></span> Student Project • Educational fair use. This site contains public‑domain and credited imagery. Not affiliated with NASA/ESA.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Year stamp
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Enable in-iframe smooth scrolling for hash links (works in embeds)
+    const onHashClick = (e) => {
+      const a = e.currentTarget;
+      const href = a.getAttribute('href') || '';
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    };
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', onHashClick);
+    });
+  </script>
+</body>
+</html>
